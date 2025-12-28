@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Open Me 💖</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffd6e8, #ffeef5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Comic Sans MS", cursive;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  .envelope {
+    position: relative;
+    width: 260px;
+    height: 180px;
+    background: #ff8fb1;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ff6f9c;
+    clip-path: polygon(0 0, 50% 55%, 100% 0);
+    transform-origin: top;
+    transition: transform 0.8s;
+    z-index: 2;
+  }
+
+  .letter {
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: white;
+    border-radius: 6px;
+    padding: 15px;
+    transition: bottom 0.8s;
+    z-index: 1;
+  }
+
+  .letter h3 {
+    margin-top: 0;
+    color: #ff4d88;
+  }
+
+  .envelope.open .flap {
+    transform: rotateX(180deg);
+  }
+
+  .envelope.open .letter {
+    bottom: 10px;
+  }
+
+  .hint {
+    margin-top: 20px;
+    color: #ff4d88;
+    font-size: 18px;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="envelope" onclick="this.classList.toggle('open')">
+    <div class="flap"></div>
+    <div class="letter">
+      <h3>Hi Nicole</h3>
+      <p>
+        I love everything about you, how you look and who you are as a person. There is nothing about you that I would change, and nothing you need to worry about. You are already more than enough for me.
+      </p>
+    </div>
+  </div>
+  <div class="hint">Click the envelope 💌</div>
+</div>
+
+</body>
+</html>
